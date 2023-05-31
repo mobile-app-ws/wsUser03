@@ -28,6 +28,7 @@ import org.koin.androidx.compose.getViewModel
 @Composable
 fun OnBoardScreen(
     modifier: Modifier = Modifier,
+    onSwipe: () -> Unit = {},
     onCancel: () -> Unit = {},
     viewModel: OnBoardViewModel = getViewModel()
 ) {
@@ -39,7 +40,7 @@ fun OnBoardScreen(
         DefaultFon(
             isNowSwipe = state.nowPosistion != Position.three,
             onSwipe = {
-
+                onSwipe()
             },
             onCancel = onCancel
         )
