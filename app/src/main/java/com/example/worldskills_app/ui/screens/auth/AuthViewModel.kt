@@ -87,7 +87,7 @@ class AuthViewModel(
 
     fun onConsumedGoNextEvent(){
         state = state.copy(
-            onGoNext = triggered
+            onGoNext = consumed
         )
     }
 }
