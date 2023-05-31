@@ -14,7 +14,7 @@ val clientModule = module {
         HttpClient(CIO){
             install(Logging)
             defaultRequest {
-                url("https://medic.madskill.ru")
+                url("https://medic.madskill.ru/")
             }
             install(ContentNegotiation){
                 json(Json)

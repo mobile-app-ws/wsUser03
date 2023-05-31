@@ -6,5 +6,6 @@ enum class Navigation(
     MAIN("MAIN"),
     SPLASH("SPLASH"),
     ONBOARD("ONBOARD"),
-    AUTH("AUTH")
+    AUTH("AUTH"),
+    REQUAIDSMS("REQUAIDSMS")
 }
