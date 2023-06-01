@@ -1,5 +1,6 @@
 package com.example.worldskills_app.modules
 
+import com.example.worldskills_app.ui.screens.analyzes.AnalyzesViewModel
 import com.example.worldskills_app.ui.screens.auth.AuthViewModel
 import com.example.worldskills_app.ui.screens.card.CreateOrRedactorCardViewModel
 import com.example.worldskills_app.ui.screens.onboard.OnBoardViewModel
@@ -14,4 +15,5 @@ val viewModelsModule = module {
     viewModelOf(::AuthViewModel)
     viewModelOf(::RequiredSmsViewModel)
     viewModelOf(::CreateOrRedactorCardViewModel)
+    viewModelOf(::AnalyzesViewModel)
 }

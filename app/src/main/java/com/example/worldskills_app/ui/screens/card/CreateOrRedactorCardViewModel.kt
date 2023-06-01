@@ -50,13 +50,13 @@ class CreateOrRedactorCardViewModel(
                 state.userCard.getUserForParameters()
             )
         }.let {
-            if (it.status != HttpStatusCode.OK) {
-                state = state.copy(
+            state = if (it.status != HttpStatusCode.OK) {
+                state.copy(
                     error = it.status.description,
                     errorEvent = triggered
                 )
             }else{
-                state = state.copy(
+                state.copy(
                     saveEvent = triggered
                 )
             }
@@ -77,13 +77,13 @@ class CreateOrRedactorCardViewModel(
                 state.userCard.getUserForParameters()
             )
         }.let {
-            if (it.status != HttpStatusCode.OK) {
-                state = state.copy(
+            state = if (it.status != HttpStatusCode.OK) {
+                state.copy(
                     error = it.status.description,
                     errorEvent = triggered
                 )
             }else{
-                state = state.copy(
+                state.copy(
                     saveEvent = triggered
                 )
             }

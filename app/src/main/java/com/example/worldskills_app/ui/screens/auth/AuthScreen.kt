@@ -39,6 +39,7 @@ import org.koin.androidx.compose.getViewModel
 fun AuthScreen(
     modifier: Modifier = Modifier,
     onGoNext: () -> Unit = {},
+    onGoToMain: () -> Unit = {},
     viewModel: AuthViewModel = getViewModel()
 ) {
     val state by viewModel.uiState.collectAsState()
@@ -147,7 +148,7 @@ fun AuthScreen(
                         shape = RoundedCornerShape(10.dp)
                     )
                     .clickable {
-                        //TODO
+                        onGoToMain()
                     },
                 contentAlignment = Alignment.Center
             ) {

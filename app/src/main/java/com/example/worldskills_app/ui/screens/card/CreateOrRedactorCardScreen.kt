@@ -15,6 +15,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.worldskills_app.ui.screens.toast
 import de.palm.composestateevents.EventEffect
@@ -70,4 +71,11 @@ fun CreateOrRedactorCardScreen(
             }
         }
     }
+}
+
+
+@Preview
+@Composable
+fun preview1() {
+    CreateOrRedactorCardScreen()
 }

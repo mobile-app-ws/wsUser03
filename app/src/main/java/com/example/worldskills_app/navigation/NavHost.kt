@@ -8,10 +8,14 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.worldskills_app.data.DataStore
+import com.example.worldskills_app.ui.screens.analyzes.AnalyzesScreen
 import com.example.worldskills_app.ui.screens.auth.AuthScreen
 import com.example.worldskills_app.ui.screens.onboard.OnBoardScreen
 import com.example.worldskills_app.ui.screens.requaidsms.RequiredSmsScreen
+import com.example.worldskills_app.ui.screens.result.ResultScreen
 import com.example.worldskills_app.ui.screens.splash.SplashScreen
+import com.example.worldskills_app.ui.screens.support.SupportScreen
+import com.example.worldskills_app.ui.screens.user.UserScreen
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import org.koin.androidx.compose.get
@@ -28,6 +32,21 @@ fun MyAppNavHost(
         navController = navController,
         startDestination = Navigation.SPLASH.name
     ) {
+        composable(Navigation.MAIN.name) {
+
+        }
+        composable(Navigation.ANALYZES.name) {
+            AnalyzesScreen()
+        }
+        composable(Navigation.USER.name) {
+            UserScreen()
+        }
+        composable(Navigation.SUPPORT.name) {
+            SupportScreen()
+        }
+        composable(Navigation.RESULT.name) {
+            ResultScreen()
+        }
         composable(Navigation.SPLASH.name) {
             SplashScreen()
             LaunchedEffect(
@@ -57,10 +76,13 @@ fun MyAppNavHost(
             AuthScreen(
                 onGoNext = {
                     navController.navigate(Navigation.REQUAIDSMS.name)
+                },
+                onGoToMain = {
+                    navController.navigate(Navigation.ANALYZES.name)
                 }
             )
         }
-        composable(Navigation.REQUAIDSMS.name){
+        composable(Navigation.REQUAIDSMS.name) {
             RequiredSmsScreen(
 
             )
