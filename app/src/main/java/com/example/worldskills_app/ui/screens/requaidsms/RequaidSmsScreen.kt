@@ -54,7 +54,7 @@ fun BlockRequiredSms(
 @Preview(showBackground = true, backgroundColor = 0xFFFFFFFF)
 @Composable
 fun PreviewBlockRequiredSms() {
-    BlockRequiredSms(text = "2")
+    RequiredSmsScreen()
 }
 
 
@@ -77,7 +77,7 @@ fun RequiredSmsScreen(
                 .fillMaxWidth()
                 .wrapContentHeight()
         ) {
-            repeat(4){index->
+            repeat(4) { index ->
                 BlockRequiredSms(
                     modifier = Modifier.padding(horizontal = 8.dp),
                     text = state.code.getOrNull(index)?.toString() ?: ""
